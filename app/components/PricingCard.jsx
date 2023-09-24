@@ -1,3 +1,4 @@
+import axios from 'axios';
 import {AiFillCheckCircle} from 'react-icons/ai'
 
 const PricingCard = ({price}) => {
@@ -175,6 +176,20 @@ const PricingCard = ({price}) => {
           );
         }
       };
+
+    const handleSubscription = async(e)=> {
+        e.preventDefault();
+        const {data} = await axios.post("/api/payment",
+        {
+            priceId:price.id
+        },
+        {
+            headers:{
+                "Content-Type":"application/json"
+            }
+        });
+        window.location.assign(data)
+    }
 
 
   return (
