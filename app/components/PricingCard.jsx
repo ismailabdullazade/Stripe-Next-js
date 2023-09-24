@@ -4,13 +4,13 @@ import {AiFillCheckCircle} from 'react-icons/ai'
 const PricingCard = ({price}) => {
 
     const dynamicSubTitle = (price) => {
-        if (price.nickname === "Standard level") {
+        if (price.nickname === "Standard") {
           return <p className="text-[#f1592a] mt-1">Standard level</p>;
-        } else if (price.nickname === "Middle level") {
+        } else if (price.nickname === "Middle") {
           return <p className="text-[#f1592a] mt-1">Middle level</p>;
-        } else if (price.nickname === "Premium level") {
+        } else if (price.nickname === "Premium") {
           return <p className="text-[#f1592a] mt-1">Premium level</p>;
-        } else if (price.nickname === "King level") {
+        } else if (price.nickname === "King") {
           return <p className="text-[#f1592a] mt-1">King level</p>;
         }
     };
@@ -213,7 +213,7 @@ const PricingCard = ({price}) => {
           <ul className="flex justify-center">
               <li className="text-xl font-bold" >{dynamicDescription(price)}</li>
           </ul>
-          <button className="mt-8 flex w-full justify-center rounded-md border border-transparent bg-[#f1592a] py-2 px-4 text-sm font-medium text-white shadow-sm">
+          <button onClick={handleSubscription} className="mt-8 flex w-full justify-center rounded-md border border-transparent bg-[#f1592a] py-2 px-4 text-sm font-medium text-white shadow-sm">
              Rent This Dumpster
           </button>
         </div>
